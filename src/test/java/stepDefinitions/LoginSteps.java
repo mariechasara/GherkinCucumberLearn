@@ -7,9 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import runners.TestRunner;
 
 public class LoginSteps {
-    public WebDriver driver = new ChromeDriver();
+    WebDriver driver = TestRunner.driver;
 
     @Given("the user is on the login page")
     public void the_user_is_on_login_page(){
@@ -26,7 +27,6 @@ public class LoginSteps {
     @Then("the user should be redirected to the inventory page")
     public void the_user_should_be_redirected_to_the_inventory_page(){
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
-        driver.quit();
     }
 
     @When("the user enters invalid credentials")
@@ -39,7 +39,6 @@ public class LoginSteps {
     @Then("an error message should be displayed")
     public void an_error_message_should_be_displayed(){
         Assert.assertTrue(driver.findElement(By.xpath("//h3[contains(@data-test,'error')] ")).isDisplayed());
-        driver.quit();
     }
 
 
