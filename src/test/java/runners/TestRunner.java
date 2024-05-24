@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeClass;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        plugin = {"pretty", "html:report/cucumber-reports.html"},
+        plugin = {"pretty", "html:report/cucumber-reports.html", "json:report/cucumber-reports.json"},
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
