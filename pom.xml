@@ -92,7 +92,7 @@
               <include>**/*Test.java</include>
             </includes>
             <systemPropertyVariables>
-              <cucumber.options>--plugin json:report/CucumberTestReport.json</cucumber.options>
+              <cucumber.options>--plugin json:report.json</cucumber.options>
             </systemPropertyVariables>
           </configuration>
         </plugin>
